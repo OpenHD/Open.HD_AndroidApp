@@ -312,23 +312,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public void onTextChanged(CharSequence s, int start, int before, int count) {}
         });
 
-        //FC_RC_SERIALPORT
-        final EditText txpowerA = (EditText) findViewById(R.id.txpowerA);
-        txpowerA.addTextChangedListener(new TextWatcher() {
-            public void afterTextChanged(Editable s) {
-
-                String mesg = s.toString();
-                DataModel.AddData("txpowerA", mesg,1);
-                if(DataModel.txpowerAIsChanged >= 1)
-                {
-                    txpowerA.setTextColor(Color.parseColor("#ee8033") );
-                }
-            }
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                DataModel.txpowerAb = s.toString();
-            }
-            public void onTextChanged(CharSequence s, int start, int before, int count) {}
-        });
 
         //FC_RC_SERIALPORT
         final EditText txpowerR = (EditText) findViewById(R.id.txpowerR);
@@ -1382,6 +1365,43 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public void onTextChanged(CharSequence s, int start, int before, int count) {}
         });
 
+        //TxPowerAir
+        final EditText TxPowerAir = (EditText) findViewById(R.id.TxPowerAir);
+        TxPowerAir.addTextChangedListener(new TextWatcher() {
+            public void afterTextChanged(Editable s) {
+
+                String mesg = s.toString();
+                DataModel.AddData("TxPowerAir", mesg,1);
+                if(DataModel.TxPowerAirIsChanged >= 1)
+                {
+                    TxPowerAir.setTextColor(Color.parseColor("#ee8033") );
+                }
+            }
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                DataModel.TxPowerAirb = s.toString();
+            }
+            public void onTextChanged(CharSequence s, int start, int before, int count) {}
+        });
+
+
+        //TxPowerGround
+        final EditText TxPowerGround = (EditText) findViewById(R.id.TxPowerGround);
+        TxPowerGround.addTextChangedListener(new TextWatcher() {
+            public void afterTextChanged(Editable s) {
+
+                String mesg = s.toString();
+                DataModel.AddData("TxPowerGround", mesg,1);
+                if(DataModel.TxPowerGroundIsChanged >= 1)
+                {
+                    TxPowerGround.setTextColor(Color.parseColor("#ee8033") );
+                }
+            }
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                DataModel.TxPowerGroundb = s.toString();
+            }
+            public void onTextChanged(CharSequence s, int start, int before, int count) {}
+        });
+
         //
         //
         //
@@ -1680,11 +1700,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if(DataModel.CopterIsChanged >= 1) { PackMessageAndSendOSD("Copter", DataModel.Copter); }
         if(DataModel.ImperialIsChanged >= 1) { PackMessageAndSendOSD("Imperial", DataModel.Imperial); }
         if(DataModel.UPDATE_NTH_TIMEIsChanged >= 1) { PackMessageAndSendJoystick("UPDATE_NTH_TIME", DataModel.UPDATE_NTH_TIME); }
-        if(DataModel.txpowerAIsChanged >= 1) { PackMessageAndSendTxPower("txpowerA", DataModel.txpowerA); }
         if(DataModel.txpowerRIsChanged >= 1) { PackMessageAndSendTxPower("txpowerR", DataModel.txpowerR); }
 
 
 
+        if(DataModel.TxPowerAirIsChanged  >= 1) { PackMessageAndSend("TxPowerAir", DataModel.TxPowerAir); }
+        if(DataModel.TxPowerGroundIsChanged >= 1) { PackMessageAndSend("TxPowerGround", DataModel.TxPowerGround); }
 
         if(DataModel.RemoteSettingsEnabledIsChanged >= 1) { PackMessageAndSend("RemoteSettingsEnabled", DataModel.RemoteSettingsEnabled); }
         if(DataModel.DefaultAudioOutIsChanged >= 1) { PackMessageAndSend("DefaultAudioOut", DataModel.DefaultAudioOut); }
@@ -2016,6 +2037,81 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+        if(Val.equals("TxPowerAir") == true)
+        {
+            //Toast.makeText(getApplicationContext(), "TxPowerAir in "+ Data, Toast.LENGTH_LONG).show();
+            EditText TxPowerAir = (EditText) findViewById(R.id.TxPowerAir);
+
+            //if Request values - set color black
+            //if Air or Ground - incrise counter by one. and change colore to green or yelow
+            //if counter == 2 set colore to black + set counter = 0
+            //ConfigRespBITRATE_PERCENT=SavedAir
+            //ConfigRespBITRATE_PERCENT=SavedGround
+            //ConfigRespWIDTH=1280
+            if(Data.equals("SavedAir") == true)
+            {
+                //Toast.makeText(getApplicationContext(), "SavedAir in" + Data, Toast.LENGTH_LONG).show();
+                DataModel.TxPowerAirAirAck = 1;
+                TxPowerAir.setTextColor(Color.parseColor(ColorsAirOnly) );
+            }
+            if(Data.equals("SavedGround") == true)
+            {
+                //Toast.makeText(getApplicationContext(), "SavedGround in" + Data, Toast.LENGTH_LONG).show();
+                DataModel.TxPowerAirGroundAck = 1;
+                TxPowerAir.setTextColor(Color.parseColor(ColorsGroundOnly) );
+            }
+            if(DataModel.TxPowerAirGroundAck == 1 && DataModel.TxPowerAirAirAck == 1)
+            {
+                Toast.makeText(getApplicationContext(), Val + " \nAir and Ground are in sync", Toast.LENGTH_LONG).show();
+                TxPowerAir.setTextColor(Color.parseColor(ColorsBoth) );
+                DataModel.TxPowerAirGroundAck = 0;
+                DataModel.TxPowerAirAirAck = 0;
+            }
+            if(Data.equals("SavedGround") == false && Data.equals("SavedAir") == false)
+            {
+                //Toast.makeText(getApplicationContext(), "false and false in "+ Data, Toast.LENGTH_LONG).show();
+                TxPowerAir.setText(Data);
+            }
+        }
+
+
+        if(Val.equals("TxPowerGround") == true)
+        {
+            //Toast.makeText(getApplicationContext(), "TxPowerGround in "+ Data, Toast.LENGTH_LONG).show();
+            EditText TxPowerGround = (EditText) findViewById(R.id.TxPowerGround);
+
+            //if Request values - set color black
+            //if Air or Ground - incrise counter by one. and change colore to green or yelow
+            //if counter == 2 set colore to black + set counter = 0
+            //ConfigRespBITRATE_PERCENT=SavedAir
+            //ConfigRespBITRATE_PERCENT=SavedGround
+            //ConfigRespWIDTH=1280
+            if(Data.equals("SavedAir") == true)
+            {
+                //Toast.makeText(getApplicationContext(), "SavedAir in" + Data, Toast.LENGTH_LONG).show();
+                DataModel.TxPowerGroundAirAck = 1;
+                TxPowerGround.setTextColor(Color.parseColor(ColorsAirOnly) );
+            }
+            if(Data.equals("SavedGround") == true)
+            {
+                //Toast.makeText(getApplicationContext(), "SavedGround in" + Data, Toast.LENGTH_LONG).show();
+                DataModel.TxPowerGroundGroundAck = 1;
+                TxPowerGround.setTextColor(Color.parseColor(ColorsGroundOnly) );
+            }
+            if(DataModel.TxPowerGroundGroundAck == 1 && DataModel.TxPowerGroundAirAck == 1)
+            {
+                Toast.makeText(getApplicationContext(), Val + " \nAir and Ground are in sync", Toast.LENGTH_LONG).show();
+                TxPowerGround.setTextColor(Color.parseColor(ColorsBoth) );
+                DataModel.TxPowerGroundGroundAck = 0;
+                DataModel.TxPowerGroundAirAck = 0;
+            }
+            if(Data.equals("SavedGround") == false && Data.equals("SavedAir") == false)
+            {
+                //Toast.makeText(getApplicationContext(), "false and false in "+ Data, Toast.LENGTH_LONG).show();
+                TxPowerGround.setText(Data);
+            }
+        }
+
 
         if(Val.equals("DefaultAudioOut") == true)
         {
@@ -2130,43 +2226,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             {
                 //Toast.makeText(getApplicationContext(), "false and false in "+ Data, Toast.LENGTH_LONG).show();
                 IsAudioTransferEnabled.setText(Data);
-            }
-        }
-
-        if(Val.equals("txpowerA") == true)
-        {
-            //Toast.makeText(getApplicationContext(), "txpowerA in "+ Data, Toast.LENGTH_LONG).show();
-            EditText txpowerA = (EditText) findViewById(R.id.txpowerA);
-
-            //if Request values - set color black
-            //if Air or Ground - incrise counter by one. and change colore to green or yelow
-            //if counter == 2 set colore to black + set counter = 0
-            //ConfigRespBITRATE_PERCENT=SavedAir
-            //ConfigRespBITRATE_PERCENT=SavedGround
-            //ConfigRespWIDTH=1280
-            if(Data.equals("SavedAir") == true)
-            {
-                //Toast.makeText(getApplicationContext(), "SavedAir in" + Data, Toast.LENGTH_LONG).show();
-                DataModel.txpowerAAirAck = 1;
-                txpowerA.setTextColor(Color.parseColor(ColorsAirOnly) );
-            }
-            if(Data.equals("SavedGround") == true)
-            {
-                //Toast.makeText(getApplicationContext(), "SavedGround in" + Data, Toast.LENGTH_LONG).show();
-                DataModel.txpowerAGroundAck = 1;
-                txpowerA.setTextColor(Color.parseColor(ColorsGroundOnly) );
-            }
-            if(DataModel.txpowerAGroundAck == 1 && DataModel.txpowerAAirAck == 1)
-            {
-                Toast.makeText(getApplicationContext(), Val + " \nAir and Ground are in sync", Toast.LENGTH_LONG).show();
-                txpowerA.setTextColor(Color.parseColor(ColorsBoth) );
-                DataModel.txpowerAGroundAck = 0;
-                DataModel.txpowerAAirAck = 0;
-            }
-            if(Data.equals("SavedGround") == false && Data.equals("SavedAir") == false)
-            {
-                //Toast.makeText(getApplicationContext(), "false and false in "+ Data, Toast.LENGTH_LONG).show();
-                txpowerA.setText(Data);
             }
         }
 

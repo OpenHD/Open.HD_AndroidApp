@@ -524,16 +524,22 @@ public class WFBCDataModel {
                     IsAudioTransferEnabledIsChanged += IsChanged;
                 break;
 
-            case "txpowerA":
-                txpowerA = Data;
-                if(txpowerA.equals(txpowerAb) == false)
-                    txpowerAIsChanged += IsChanged;
-                break;
-
             case "txpowerR":
                 txpowerR = Data;
                 if(txpowerR.equals(txpowerRb) == false)
                     txpowerRIsChanged += IsChanged;
+                break;
+
+            case "TxPowerAir":
+                TxPowerAir = Data;
+                if(TxPowerAir.equals(TxPowerAirb) == false)
+                    TxPowerAirIsChanged += IsChanged;
+                break;
+
+            case "TxPowerGround":
+                TxPowerGround = Data;
+                if(TxPowerGround.equals(TxPowerGroundb) == false)
+                    TxPowerGroundIsChanged += IsChanged;
                 break;
 
             default:
@@ -691,11 +697,18 @@ public class WFBCDataModel {
     public int IsAudioTransferEnabledAirAck = 0;
     public int IsAudioTransferEnabledGroundAck = 0;
 
-    public String txpowerA;
-    public String txpowerAb;
-    public int txpowerAIsChanged = -1;
-    public int txpowerAAirAck = 0;
-    public int txpowerAGroundAck = 0;
+
+    public String TxPowerAir;
+    public String TxPowerAirb;
+    public int TxPowerAirIsChanged = -1;
+    public int TxPowerAirAirAck = 0;
+    public int TxPowerAirGroundAck = 0;
+
+    public String TxPowerGround;
+    public String TxPowerGroundb;
+    public int TxPowerGroundIsChanged = -1;
+    public int TxPowerGroundAirAck = 0;
+    public int TxPowerGroundGroundAck = 0;
 
     public String txpowerR;
     public String txpowerRb;
