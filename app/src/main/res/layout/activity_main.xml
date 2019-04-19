@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.none.non.openhd.MainActivity">
+    tools:context="com.none.non.openhd.MainActivity"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
 
 
     <LinearLayout
@@ -12,18 +14,24 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="26dp">
+        tools:layout_editor_absoluteY="26dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true" >
 
         <TableLayout
 
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:stretchColumns="1">
+            android:stretchColumns="1"
+            android:focusable="true"
+            android:focusableInTouchMode="true" >
 
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
 
                 <Button
                     android:id="@+id/RequestSettings"
@@ -62,11 +70,15 @@
 
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:stretchColumns="1">
+            android:stretchColumns="1"
+            android:focusable="true"
+            android:focusableInTouchMode="true" >
 
             <TableRow
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
 
                 <TextView
                     android:id="@+id/textStatus"
@@ -89,8 +101,10 @@
             </TableRow>
 
             <TableRow
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
 
                 <TextView
                     android:id="@+id/textSync"
@@ -120,17 +134,23 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true">
+            android:layout_alignParentTop="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true" >
 
             <TableLayout
 
                 android:layout_width="fill_parent"
                 android:layout_height="match_parent"
-                android:stretchColumns="1">
+                android:stretchColumns="1"
+                android:focusable="true"
+                android:focusableInTouchMode="true" >
 
                 <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
 
                     <TextView
                         android:id="@+id/TextFrequency"
@@ -159,7 +179,9 @@
 
                 <TableRow
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true">
 
                     <TextView
                         android:id="@+id/TextCopter"
@@ -184,7 +206,9 @@
 
                 <TableRow
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true">
 
                     <TextView
                         android:id="@+id/TextImperial"
@@ -211,7 +235,9 @@
 
                 <TableRow
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true">
 
                     <TextView
                         android:id="@+id/textFrequency"
@@ -244,31 +270,30 @@
 
                 </TableRow>
 
+
                 <TableRow
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true">
 
                     <TextView
-                        android:id="@+id/textxpowerA"
+                        android:id="@+id/texTxPowerAir"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/EditFreq"
-                        android:layout_alignStart="@+id/TextFrequency"
                         android:layout_gravity="left"
                         android:paddingLeft="5dp"
                         android:paddingTop="4dp"
                         android:paddingBottom="4dp"
-                        android:text="TxPowerAth9k"
+                        android:text="TxPowerAir"
                         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                         tools:layout_editor_absoluteX="410dp"
                         tools:layout_editor_absoluteY="0dp" />
 
                     <EditText
-                        android:id="@+id/txpowerA"
+                        android:id="@+id/TxPowerAir"
                         android:layout_width="64dp"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/TextFrequency"
-                        android:layout_alignStart="@+id/EditFreq"
                         android:ems="10"
                         android:gravity="right"
                         android:inputType="textPersonName"
@@ -276,13 +301,48 @@
                         android:textAlignment="center"
                         tools:layout_editor_absoluteX="8dp"
                         tools:layout_editor_absoluteY="79dp" />
-
                 </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true">
+
+                    <TextView
+                        android:id="@+id/texTxPowerGround"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:paddingLeft="5dp"
+                        android:paddingTop="4dp"
+                        android:paddingBottom="4dp"
+                        android:text="TxPowerGround"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        tools:layout_editor_absoluteX="410dp"
+                        tools:layout_editor_absoluteY="0dp" />
+
+                    <EditText
+                        android:id="@+id/TxPowerGround"
+                        android:layout_width="64dp"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:gravity="right"
+                        android:inputType="textPersonName"
+                        android:text="value not loaded"
+                        android:textAlignment="center"
+                        tools:layout_editor_absoluteX="8dp"
+                        tools:layout_editor_absoluteY="79dp" />
+                </TableRow>
+
+
 
 
                 <TableRow
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true">
 
                     <TextView
                         android:id="@+id/textxpowerR"
@@ -318,7 +378,9 @@
 
                 <TableRow
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true">
 
                     <TextView
                         android:id="@+id/textBLOCKLENGTH"
@@ -354,6 +416,8 @@
                 <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
                     android:layout_gravity="right">
 
                     <TextView
@@ -386,7 +450,9 @@
 
                 <TableRow
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true">
 
                     <TextView
                         android:id="@+id/textFECS"
@@ -418,9 +484,11 @@
                         tools:layout_editor_absoluteY="79dp" />
                 </TableRow>
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                               <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
 
                     <TextView
                         android:id="@+id/textFECS2"
@@ -452,9 +520,11 @@
                         tools:layout_editor_absoluteY="79dp" />
                 </TableRow>
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                               <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
 
                     <TextView
                         android:id="@+id/textFECS3"
@@ -487,9 +557,11 @@
                         tools:layout_editor_absoluteY="79dp" />
                 </TableRow>
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                               <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
 
                     <TextView
                         android:id="@+id/textFECS4"
@@ -521,9 +593,11 @@
                         tools:layout_editor_absoluteY="79dp" />
                 </TableRow>
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                               <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
 
                     <TextView
                         android:id="@+id/textFECS5"
@@ -555,9 +629,11 @@
                         tools:layout_editor_absoluteY="79dp" />
                 </TableRow>
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                               <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
 
                     <TextView
                         android:id="@+id/textFECS6"
@@ -589,9 +665,11 @@
                         tools:layout_editor_absoluteY="79dp" />
                 </TableRow>
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                               <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
 
                     <TextView
                         android:id="@+id/textFECS7"
@@ -623,9 +701,11 @@
                         tools:layout_editor_absoluteY="79dp" />
                 </TableRow>
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                               <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
 
                     <TextView
                         android:id="@+id/textFREQSCAN"
@@ -653,9 +733,11 @@
                         tools:layout_editor_absoluteY="79dp" />
                 </TableRow>
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                               <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
 
                     <TextView
                         android:id="@+id/textFPS"
@@ -684,9 +766,11 @@
                 </TableRow>
 
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                               <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
 
                     <TextView
                         android:id="@+id/textTXMODE"
@@ -715,9 +799,11 @@
                 </TableRow>
 
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                               <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
 
                     <TextView
                         android:id="@+id/textTELEMETRY_TRANSMISSION"
@@ -745,9 +831,11 @@
                         tools:layout_editor_absoluteY="79dp" />
                 </TableRow>
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                               <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
 
                     <TextView
                         android:id="@+id/textTELEMETRY_UPLINK"
@@ -775,9 +863,11 @@
                         tools:layout_editor_absoluteY="79dp" />
                 </TableRow>
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                               <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
 
                     <TextView
                         android:id="@+id/textRC"
@@ -805,9 +895,11 @@
                         tools:layout_editor_absoluteY="79dp" />
                 </TableRow>
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                               <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
 
                     <TextView
                         android:id="@+id/textCTS_PROTECTION"
@@ -835,9 +927,11 @@
                         tools:layout_editor_absoluteY="79dp" />
                 </TableRow>
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                               <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
 
                     <TextView
                         android:id="@+id/textWIFI_HOTSPOT"
@@ -865,9 +959,11 @@
                         tools:layout_editor_absoluteY="79dp" />
                 </TableRow>
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                               <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
 
                     <TextView
                         android:id="@+id/textWIFI_HOTSPOT_NIC"
@@ -895,9 +991,11 @@
                         tools:layout_editor_absoluteY="79dp" />
                 </TableRow>
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                               <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
 
                     <TextView
                         android:id="@+id/textETHERNET_HOTSPOT"
@@ -925,9 +1023,11 @@
                         tools:layout_editor_absoluteY="79dp" />
                 </TableRow>
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                               <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
 
                     <TextView
                         android:id="@+id/textENABLE_SCREENSHOTS"
@@ -955,9 +1055,11 @@
                         tools:layout_editor_absoluteY="79dp" />
                 </TableRow>
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                               <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
 
                     <TextView
                         android:id="@+id/textFORWARD_STREAM"
@@ -985,9 +1087,11 @@
                         tools:layout_editor_absoluteY="79dp" />
                 </TableRow>
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                               <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
 
                     <TextView
                         android:id="@+id/textVIDEO_UDP_PORT"
@@ -1016,9 +1120,11 @@
                 </TableRow>
 
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                               <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
 
                     <TextView
                         android:id="@+id/textUPDATE_NTH_TIME"
@@ -1046,9 +1152,11 @@
                         tools:layout_editor_absoluteY="79dp" />
                 </TableRow>
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                               <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
 
                     <TextView
                         android:id="@+id/textFC_RC_SERIALPORT"
@@ -1076,9 +1184,11 @@
                         tools:layout_editor_absoluteY="79dp" />
                 </TableRow>
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                               <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
 
                     <TextView
                         android:id="@+id/TextFC_RC_BAUDRATE"
@@ -1102,9 +1212,11 @@
                 </TableRow>
 
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                               <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
 
                     <TextView
                         android:id="@+id/textFC_TELEMETRY_SERIALPORT"
@@ -1132,9 +1244,11 @@
                         tools:layout_editor_absoluteY="79dp" />
                 </TableRow>
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                               <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
 
                     <TextView
                         android:id="@+id/TextFC_TELEMETRY_BAUDRATE"
@@ -1158,9 +1272,11 @@
                 </TableRow>
 
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                               <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
 
                     <TextView
                         android:id="@+id/textFC_MSP_SERIALPORT"
@@ -1188,9 +1304,11 @@
                         tools:layout_editor_absoluteY="79dp" />
                 </TableRow>
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                               <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
 
                     <TextView
                         android:id="@+id/TextFC_MSP_BAUDRATE"
@@ -1214,9 +1332,11 @@
                 </TableRow>
 
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                               <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
 
                     <TextView
                         android:id="@+id/textIsAudioTransferEnabled"
@@ -1245,9 +1365,11 @@
                 </TableRow>
 
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                               <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
 
                     <TextView
                         android:id="@+id/textDefaultAudioOutHelp"
@@ -1276,9 +1398,11 @@
                         tools:layout_editor_absoluteY="0dp" />
                 </TableRow>
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                               <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
 
                     <TextView
                         android:id="@+id/textDefaultAudioOut"
@@ -1307,9 +1431,11 @@
                 </TableRow>
 
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                               <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
 
                     <TextView
                         android:id="@+id/textIsCamera1Enabled"
@@ -1337,9 +1463,11 @@
                         tools:layout_editor_absoluteY="79dp" />
                 </TableRow>
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                               <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
 
                     <TextView
                         android:id="@+id/textIsCamera2Enabled"
@@ -1367,9 +1495,11 @@
                         tools:layout_editor_absoluteY="79dp" />
                 </TableRow>
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                               <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
 
                     <TextView
                         android:id="@+id/textIsCamera3Enabled"
@@ -1397,9 +1527,11 @@
                         tools:layout_editor_absoluteY="79dp" />
                 </TableRow>
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                               <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
 
                     <TextView
                         android:id="@+id/textIsCamera4Enabled"
@@ -1427,9 +1559,11 @@
                         tools:layout_editor_absoluteY="79dp" />
                 </TableRow>
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                               <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
 
                     <TextView
                         android:id="@+id/textDefaultCameraId"
@@ -1457,9 +1591,11 @@
                         tools:layout_editor_absoluteY="79dp" />
                 </TableRow>
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                               <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
 
                     <TextView
                         android:id="@+id/textChannelToListen"
@@ -1487,9 +1623,11 @@
                         tools:layout_editor_absoluteY="79dp" />
                 </TableRow>
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                               <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
 
                     <TextView
                         android:id="@+id/textCamera1ValueMin"
@@ -1517,9 +1655,11 @@
                         tools:layout_editor_absoluteY="79dp" />
                 </TableRow>
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                               <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
 
                     <TextView
                         android:id="@+id/textCamera1ValueMax"
@@ -1548,9 +1688,11 @@
                 </TableRow>
                 //////////////////
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                               <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
 
                     <TextView
                         android:id="@+id/textCamera2ValueMin"
@@ -1578,9 +1720,11 @@
                         tools:layout_editor_absoluteY="79dp" />
                 </TableRow>
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                               <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
 
                     <TextView
                         android:id="@+id/textCamera2ValueMax"
@@ -1610,9 +1754,11 @@
 
                 ///
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                               <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
 
                     <TextView
                         android:id="@+id/textCamera3ValueMin"
@@ -1640,9 +1786,11 @@
                         tools:layout_editor_absoluteY="79dp" />
                 </TableRow>
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                               <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
 
                     <TextView
                         android:id="@+id/textCamera3ValueMax"
@@ -1672,9 +1820,11 @@
 
                 //
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                               <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
 
                     <TextView
                         android:id="@+id/textCamera4ValueMin"
@@ -1702,9 +1852,11 @@
                         tools:layout_editor_absoluteY="79dp" />
                 </TableRow>
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                               <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
 
                     <TextView
                         android:id="@+id/textCamera4ValueMax"
@@ -1733,14 +1885,16 @@
                 </TableRow>
 
                 <TableRow
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true">
 
                     <TextView
                         android:id="@+id/textRS"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical|center_horizontal|center"
+                        android:layout_gravity="left"
                         android:gravity="left"
                         android:paddingLeft="5dp"
                         android:paddingTop="4dp"
@@ -1752,7 +1906,7 @@
                         android:id="@+id/TextRS2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:layout_gravity="left"
                         android:paddingLeft="5dp"
                         android:paddingTop="4dp"
                         android:paddingBottom="4dp"
@@ -1761,9 +1915,11 @@
                         android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
                 </TableRow>
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                               <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
 
                     <TextView
                         android:id="@+id/textRemoteSettingsTimer"
@@ -1790,9 +1946,11 @@
                         tools:layout_editor_absoluteY="79dp" />
                 </TableRow>
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                               <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
 
                     <TextView
                         android:id="@+id/textCELLS"
@@ -1820,9 +1978,11 @@
                         tools:layout_editor_absoluteY="79dp" />
                 </TableRow>
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                               <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
 
                     <TextView
                         android:id="@+id/TextEncryptionOrRange"
@@ -1846,9 +2006,11 @@
                         android:layout_gravity="center_vertical|center" />
                 </TableRow>
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                               <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
 
                     <TextView
                         android:id="@+id/TextIsBandSwicherEnabled"
@@ -1876,9 +2038,11 @@
                         tools:layout_editor_absoluteY="79dp" />
                 </TableRow>
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                               <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
 
                     <TextView
                         android:id="@+id/TextBandwidth"
@@ -1906,9 +2070,11 @@
                         tools:layout_editor_absoluteY="79dp" />
                 </TableRow>
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                               <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
 
                     <TextView
                         android:id="@+id/TextUplinkSpeed"
@@ -1936,9 +2102,11 @@
                         tools:layout_editor_absoluteY="79dp" />
                 </TableRow>
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                               <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
 
                     <TextView
                         android:id="@+id/TextChannelToListen2"
@@ -1966,9 +2134,11 @@
                         tools:layout_editor_absoluteY="79dp" />
                 </TableRow>
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                               <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
 
                     <TextView
                         android:id="@+id/TextPrimaryCardMAC"
@@ -1996,9 +2166,11 @@
                         tools:layout_editor_absoluteY="79dp" />
                 </TableRow>
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                               <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
 
                     <TextView
                         android:id="@+id/TextSlaveCardMAC"
@@ -2026,9 +2198,11 @@
                         tools:layout_editor_absoluteY="79dp" />
                 </TableRow>
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                               <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
 
                     <TextView
                         android:id="@+id/TextBand5Below"
@@ -2056,9 +2230,11 @@
                         tools:layout_editor_absoluteY="79dp" />
                 </TableRow>
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                               <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
 
                     <TextView
                         android:id="@+id/TextBand10ValueMin"
@@ -2086,9 +2262,11 @@
                         tools:layout_editor_absoluteY="79dp" />
                 </TableRow>
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                               <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
 
                     <TextView
                         android:id="@+id/TextBand10ValueMax"
@@ -2116,9 +2294,11 @@
                         tools:layout_editor_absoluteY="79dp" />
                 </TableRow>
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                               <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
 
                     <TextView
                         android:id="@+id/TextBand20After"
